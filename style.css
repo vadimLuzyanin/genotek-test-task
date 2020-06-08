@@ -1,0 +1,252 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1300px;
+  height: 100;
+  box-shadow: 0 4px 26px 0 #e1e1e1;
+  border-radius: 8px;
+  --background: #f4f4f6;
+  --battleship-grey: #6d7278;
+  --brownish-grey: #8a7c5d;
+}
+
+.header {
+  padding: 30px 45px;
+}
+
+.info {
+  display: flex;
+  font-size: 14px;
+  color: var(--battleship-grey);
+}
+
+.info-title {
+  line-height: 1.43;
+  letter-spacing: 1.5px;
+  color: var(--battleship-grey);
+  margin-right: 15px;
+}
+
+.info-date {
+  margin-right: 15px;
+}
+
+.info-access {
+  display: flex;
+  color: var(--brownish-grey);
+}
+
+.info-access-logo {
+  margin-right: 8px;
+}
+
+.header-title {
+  padding: 0;
+  margin: 15px 0 8px 0;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.header-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.image {
+  max-height: 450px;
+}
+
+.image img {
+  display: block;
+  height: 100%;
+}
+
+.spoiler {
+  background-color: #142536;
+}
+.spoiler-header {
+  font-family: ALSStory;
+  font-size: 22px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 45px;
+  min-height: 88px;
+  background-color: #142536;
+  border-top: 1px solid var(--battleship-grey);
+  cursor: pointer;
+}
+
+.spoiler-header:hover {
+  background-color: #22374b;
+}
+
+.spoiler-content {
+  display: none;
+  color: white;
+  margin: 0 45px;
+  background-color: #142536;
+  border-top: 1px solid var(--battleship-grey);
+  padding: 30px 0;
+  font-family: ALSStory;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.visible {
+  display: flex;
+}
+
+.arrow {
+  position: relative;
+  transition: transform ease-in 0.3s;
+}
+
+.arrow-active {
+  transform: rotate(180deg);
+}
+
+.spoiler-content-text {
+  max-width: 693px;
+  margin-right: 118px;
+}
+
+.spoiler-link {
+  color: #5a88c1;
+  text-decoration: none;
+  border-bottom: 1px dashed #5a88c1;
+}
+
+.spoiler-content-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.spoiler-form.desktop {
+  display: flex;
+  flex-direction: column;
+}
+
+.spoiler-form.mobile {
+  display: none;
+}
+
+.spoiler-form input {
+  height: 50px;
+  width: 281px;
+  font-family: ALSStory;
+  font-size: 16px;
+  line-height: 0;
+  color: white;
+  border: none;
+  border-bottom: 1px solid var(--battleship-grey);
+  outline: none;
+  background-color: transparent;
+  padding-top: 25px;
+  cursor: pointer;
+  transition: border-bottom ease-in-out 0.3s;
+}
+
+.spoiler-form input::placeholder {
+  font-family: ALSStory;
+  font-size: 16px;
+  color: white;
+}
+
+.spoiler-form input:focus,
+.spoiler-form input:hover {
+  border-bottom: 1px solid white;
+}
+
+.cross {
+  position: relative;
+}
+
+.spoiler-form input:focus + .cross::before,
+.spoiler-form input:hover + .cross::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-image: url(./assets/group-2-copy-3.svg);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.submit-button {
+  width: 214px;
+  height: 50px;
+  border-radius: 1000px;
+  background-color: transparent;
+  border: 1px solid white;
+  font-size: 16px;
+  margin-top: 44px;
+  color: white;
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  transition: background-color ease-in-out 0.3s;
+}
+
+.submit-button:hover {
+  background-color: white;
+  color: #142536;
+}
+
+@media (max-width: 750px) {
+  .spoiler-content-image {
+    margin: 30px auto;
+    order: 2;
+  }
+  .spoiler-content-text {
+    margin: 0;
+    order: 1;
+  }
+  .spoiler-content {
+    flex-direction: column;
+  }
+  .spoiler-form.desktop {
+    display: none;
+  }
+  .spoiler-form.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    order: 3;
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    padding: 15px;
+  }
+  .info-access-text {
+    display: none;
+  }
+  .spoiler-link {
+    border: none;
+  }
+  .submit-button {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .spoiler-header {
+    padding: 15px;
+  }
+  .spoiler-content {
+    margin: 0 15px;
+    padding: 15px 0;
+  }
+}
